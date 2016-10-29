@@ -15,3 +15,61 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 img {
   max-width: 100%;
 }
+.banner{
+  background-color: #D2A401;
+  text-align: center;
+}
+.banner-group
+{
+  display: inline-block;
+}
+
+header{
+  .title{
+  display: inline-block;
+  vertical-align: middle;
+  padding-bottom: 14px;
+  text-transform: uppercase;
+  font-size: 50px;
+  color: #2C1154;
+  }
+  img{
+    height: 80px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
+.menu-item{
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  .food-name{
+    display: inline-block;
+  }
+  .price{
+    float: right;
+    display: inline-block;
+  }
+}
+.menu{
+  display: inline-block;
+}
+.order-screen{
+  display: inline-block;
+ float: right;
+ border: 2px solid grey;
+ border-radius: 5px;
+ .order{
+   text-decoration: underline;
+ }
+ .order-price{
+   display: inline-block;
+   margin-left: 20px
+ }
+ .total{
+   display: inline-block
+ }
+}
