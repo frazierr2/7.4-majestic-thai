@@ -6,9 +6,8 @@ var _ = require('underscore');
 
 var SelectedOrder = React.createClass({
  placeOrder: function(){
-
    alert('Your Order Was Placed Successfully');
-
+   window.location.reload();
  },
   render: function(){
     var collection = this.props.customersSelection;
