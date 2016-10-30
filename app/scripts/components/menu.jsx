@@ -8,22 +8,23 @@ var MenuItemCollection = require('../models/models').MenuItemCollection;
 var MenuItems = React.createClass({
 mixins: [Backbone.React.Component.mixin],
 
-selectMenuItem: function(item){
-this.props.addItemToOrder
-  console.log(item.get('price'));
+addItemToOrder: function(item){
+  var selectedItem = {title: item.get('item'), price: item.get('price')};
+this.props.addItemToOrder(selectedItem)
+  // console.log('selectedItem', selectedItem);
 },
 render: function(){
 var collection = this.getCollection();
 
 var menuList = collection.map(function(model){
-  var selectMenuItem = this.selectMenuItem.bind(this, model);
+  var addItemToOrder = this.addItemToOrder.bind(this, model);
   return (
-      <div className="menu-item" key={model.get('_id')}>
+      <div className="menu-item" key={model.get('_id') || model.cid}>
         <h3 className="food-name"><strong>{model.get('item')}</strong></h3>
         <h3 className="price"><strong>{model.get('price')}</strong></h3>
         <p className="description">{model.get('description')}</p>
         <div className="select-btn">
-        <button onClick={selectMenuItem} type="button" className="btn btn-primary btn-sm btn-select" >Select Item</button>
+        <button onClick={addItemToOrder} type="button" className="btn btn-primary btn-sm btn-select" >Select Item</button>
         </div>
       </div>
     )
@@ -48,7 +49,7 @@ mixins: [Backbone.React.Component.mixin],
 // },
 render: function(){
   return(
-    <MenuItems />
+    <MenuItems addItemToOrder={this.props.addItemToOrder}/>
   );
 }
 });

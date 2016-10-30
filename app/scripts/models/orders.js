@@ -1,8 +1,7 @@
 var Backbone = require('backbone');
 
 var Items = Backbone.Model.extend({
-  idAttribute: '_id',
-
+  idAttribute: '_id'
 });
 
 var ItemsCollection = Backbone.Collection.extend({
